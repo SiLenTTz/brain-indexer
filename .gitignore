@@ -1,0 +1,13 @@
+brain.env
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+*.egg-info/
+__pycache__/
+*.pyc
+scripts/audit-patterns.local

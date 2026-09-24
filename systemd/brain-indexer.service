@@ -1,0 +1,16 @@
+[Unit]
+Description=brain-indexer server (lokales Galaxy-Backend)
+After=network.target
+
+[Service]
+# Beispiel-Unit — an eigene Pfade anpassen und nach
+# ~/.config/systemd/user/ kopieren (siehe README). Bei einer System-Unit
+# statt User-Unit zusätzlich z.B. "User=youruser" setzen.
+WorkingDirectory=%h/brain-indexer
+ExecStart=/usr/bin/python3 %h/brain-indexer/server.py
+Environment=BRAIN_VAULT=%h/Vault
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

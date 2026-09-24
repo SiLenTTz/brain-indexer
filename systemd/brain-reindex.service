@@ -1,0 +1,7 @@
+[Unit]
+Description=brain-indexer Reindex (Timer-Einheit, oneshot)
+
+[Service]
+Type=oneshot
+# Beispiel-Unit — an eigene Pfade anpassen (siehe README).
+ExecStart=/usr/bin/python3 %h/brain-indexer/indexer.py %h/Vault

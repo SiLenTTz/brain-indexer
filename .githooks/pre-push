@@ -1,0 +1,8 @@
+#!/bin/bash
+# pre-push: Quick-Checks vor jedem git push (aktivieren: scripts/setup-hooks.sh).
+set -e
+cd "$(dirname "$0")/.."
+echo "[pre-push] Syntax-Check …"
+python3 -m py_compile indexer.py server.py
+echo "[pre-push] Tests …"
+python3 test_indexer.py
